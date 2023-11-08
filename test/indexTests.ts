@@ -31,7 +31,6 @@ const testTableStructure = async (url: string, data: Student[]) => {
     expect(firstRowData[0]).toBe(data[0].student_id.toString());
     expect(firstRowData[1]).toBe(data[0].student_name);
 
-    // Check if the third data cell contains a date formatted as 'YYYY-MM-DD'
     expect(firstRowData[2]).toBe(data[0].birthdate);
 
     const imgSrc = await page.$eval(
