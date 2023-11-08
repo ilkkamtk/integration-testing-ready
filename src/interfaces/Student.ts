@@ -16,4 +16,6 @@ type PostStudent = Omit<Student, 'student_id'>;
 
 type PutStudent = Partial<PostStudent>;
 
-export {Student, GetStudent, PostStudent, PutStudent};
+type PuppeteerStudent = Omit<PostStudent, 'birthdate'>; // no birthdate because puppeteer uses whatever format the browser uses
+
+export {Student, GetStudent, PostStudent, PutStudent, PuppeteerStudent};
