@@ -27,6 +27,16 @@ app.get<{}, MessageResponse>('/', (_req: Request, res: Response) => {
 
 app.use('/api/v1', api);
 
+// ****  serve html with ejs template engine ****
+
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// index page
+app.get('/ejs', (_req: Request, res: Response) => {
+  res.render('pages/index');
+});
+
 app.use(notFound);
 app.use(errorHandler);
 
